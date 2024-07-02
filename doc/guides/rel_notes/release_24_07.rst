@@ -89,6 +89,7 @@ New Features
   * Reworked the device uninitialization flow to ensure complete resource
     cleanup and lay the groundwork for hot-unplug support.
   * Removed an obsolete workaround for a false L4 bad Rx checksum indication.
+  * Fixed Rx chcecksum inspection to check only TCP/UDP packets.
 
 * **Updated Intel ixgbe driver.**
 
