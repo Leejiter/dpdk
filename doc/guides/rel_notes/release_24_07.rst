@@ -88,6 +88,7 @@ New Features
   * Reworked the driver logger usage in order to improve Tx performance.
   * Reworked the device uninitialization flow to ensure complete resource
     cleanup and lay the groundwork for hot-unplug support.
+  * Removed an obsolete workaround for a false L4 bad Rx checksum indication.
 
 * **Updated Intel ixgbe driver.**
 
