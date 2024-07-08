@@ -4803,7 +4803,7 @@ nfp_flow_compile_action(struct nfp_flower_representor *representor,
 		total_actions++;
 	}
 
-	if (total_actions == 0 || param.position == param.action_data) {
+	if (nfp_flow->install_flag && total_actions == 0) {
 		PMD_DRV_LOG(ERR, "The action list is empty");
 		return -ENOTSUP;
 	}
