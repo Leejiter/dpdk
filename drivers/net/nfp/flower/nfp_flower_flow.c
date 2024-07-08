@@ -977,7 +977,7 @@ nfp_flow_item_check_port(struct nfp_item_calculate_param *param)
 	const struct rte_flow_item_port_id *port_id;
 
 	port_id = param->item->spec;
-	if (port_id == NULL || port_id->id >= RTE_MAX_ETHPORTS)
+	if (port_id == NULL || rte_eth_dev_is_valid_port(port_id->id) == 0)
 		return -ERANGE;
 
 	return 0;
@@ -1302,7 +1302,7 @@ nfp_flow_action_check_port(struct nfp_action_calculate_param *param)
 		port_id = action_port_id->id;
 	}
 
-	if (port_id >= RTE_MAX_ETHPORTS)
+	if (rte_eth_dev_is_valid_port(port_id) == 0)
 		return -ERANGE;
 
 	return 0;
